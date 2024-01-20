@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import com.meng.backenddemo.repository.UserRepository;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.UUID;
+
 @Service
 public class UserService {
 
@@ -37,16 +39,18 @@ public class UserService {
 
     @Transactional
     public UserDto createUser(UserDto userDto) {
-        // create UserEntity then mapping to DTO fields
         UserEntity userEntity = new UserEntity();
         BeanUtils.copyProperties(userDto, userEntity);
 
-        // save UserEntity to userRepository
-        UserEntity savedUser = userRepository.save(userEntity);
+        // 检查 userDto 是否有 userUuid，如果没有则生成一个
+        if (userEntity.getUserUuid() == null || userEntity.getUserUuid().isEmpty()) {
+            userEntity.setUserUuid(UUID.randomUUID().toString());
+        }
 
-        // create and return DTO
+        userEntity = userRepository.save(userEntity);
+
         UserDto savedUserDto = new UserDto();
-        BeanUtils.copyProperties(savedUser, savedUserDto);
+        BeanUtils.copyProperties(userEntity, savedUserDto);
         return savedUserDto;
     }
 

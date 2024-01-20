@@ -1,0 +1,13 @@
+CREATE DATABASE demodb;
+USE demodb;
+
+CREATE TABLE users (
+    user_uuid VARCHAR(255) NOT NULL,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    birthday DATE,
+    gender VARCHAR(50),
+    phone VARCHAR(20),
+    user_rank INT,
+    PRIMARY KEY (user_uuid)
+);
