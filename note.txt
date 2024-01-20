@@ -1,3 +1,5 @@
+// dpCreationNote:
+
 CREATE DATABASE demodb;
 USE demodb;
 
@@ -11,3 +13,6 @@ CREATE TABLE users (
     user_rank INT,
     PRIMARY KEY (user_uuid)
 );
+
+// search note:
+https://chat.openai.com/c/caf1d1e6-d15e-4211-a34b-0fb305b411e2
