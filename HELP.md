@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.meng.restful-api-json-example' is invalid and this project uses 'com.meng.restfulapijsonexample' instead.
+* The original package name 'com.meng.backend-demo' is invalid and this project uses 'com.meng.backenddemo' instead.
 
 # Getting Started
 

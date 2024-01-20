@@ -1,3 +1,16 @@
+GET http://localhost:8080/v1/users/health
+
 ### Get data by SkuId
-GET http://localhost:8080/v1/users/all
+GET http://localhost:8080/v1/users/123
+
+### Update data base
+POST http://localhost:8080/v1/users/create
+Content-Type: application/json
+
+{
+  "userUuid": "123e4567-e89b-12d3-a456-426614174000",
+  "birthday": "1990-01-01",
+  "gender": "male",
+  "phone": "123-456-7890"
+}
 
