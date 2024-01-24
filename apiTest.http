@@ -1,3 +1,6 @@
+
+#=============================== V1 ===================================
+# health check
 GET http://localhost:8080/v1/users/health
 
 ### Update data base
@@ -16,3 +19,25 @@ GET http://localhost:8080/v1/users/123e4567-e89b-12d3-a456-TestUserUUID
 
 ### Delete data by uuid
 DELETE http://localhost:8080/v1/users/delete/123e4567-e89b-12d3-a456-TestUserUUID
+
+#=============================== V2 ===================================
+### health check
+GET http://localhost:8080/v2/users/health
+
+### Update data base
+POST http://localhost:8080/v2/users/create
+Content-Type: application/json
+
+{
+  "userUuid": "123e4567-e89b-12d3-a456-TestUserUUID",
+  "birthday": "1990-01-01",
+  "gender": "male",
+  "phone": "123-456-7890"
+}
+
+### Get data by uuid
+GET http://localhost:8080/v2/users/123e4567-e89b-12d3-a456-TestUserUUID
+
+### Delete data by uuid
+DELETE http://localhost:8080/v2/users/delete/123e4567-e89b-12d3-a456-TestUserUUID
+
